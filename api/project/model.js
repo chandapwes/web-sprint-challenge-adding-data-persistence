@@ -8,17 +8,17 @@ module.exports = {
 }
 
 function get() {
-    return db('resources')
+    return db('projects')
 }
 
 function getById(id) {
-    return db('resources')
+    return db('projects')
         .where({ id })
         .first()
 }
 
 function insert(resource) {
-    return db('resource')
+    return db('project')
     .insert(resource)
     .then(ids => {
         return getById(ids[0])
